@@ -43,27 +43,41 @@ def extract_phoneme_accuracies(example):
         ]
     }
 
+# def initialize_model(prep_path: str, cache_dir: str, device: torch.device):
+#     """
+#     Initializes the Wav2Vec2 processor, tokenizer, and model, and moves the model to the specified device.
+
+#     Args:
+#         prep_path (str): The identifier or path of the pretrained model.
+#         cache_dir (str): The directory to cache the model files.
+#         device (torch.device): The device to run the model on.
+
+#     Returns:
+#         tuple: A tuple containing the processor, tokenizer, and model.
+#     """
+#     logger.info("Initializing model components...")
+#     processor = Wav2Vec2Processor.from_pretrained(prep_path, cache_dir=cache_dir)
+#     tokenizer = Wav2Vec2CTCTokenizer.from_pretrained(prep_path, cache_dir=cache_dir)
+#     model = Wav2Vec2ForCTC.from_pretrained(prep_path, cache_dir=cache_dir)
+#     model.to(device)
+#     logger.info("Model initialized and moved to device: %s", device)
+#     return processor, tokenizer, model
+
 def initialize_model(prep_path: str, cache_dir: str, device: torch.device):
     """
     Initializes the Wav2Vec2 processor, tokenizer, and model, and moves the model to the specified device.
-
-    Args:
-        prep_path (str): The identifier or path of the pretrained model.
-        cache_dir (str): The directory to cache the model files.
-        device (torch.device): The device to run the model on.
-
-    Returns:
-        tuple: A tuple containing the processor, tokenizer, and model.
     """
     logger.info("Initializing model components...")
+    
+    # 分別初始化各個組件
     processor = Wav2Vec2Processor.from_pretrained(prep_path, cache_dir=cache_dir)
     tokenizer = Wav2Vec2CTCTokenizer.from_pretrained(prep_path, cache_dir=cache_dir)
-    model = Wav2Vec2ForCTC.from_pretrained(prep_path, cache_dir=cache_dir)
+    model = Wav2Vec2ForCTC.from_pretrained(prep_path, cache_dir=cache_dir)    
+    # 將模型移動到指定設備
     model.to(device)
+
     logger.info("Model initialized and moved to device: %s", device)
     return processor, tokenizer, model
-
-
 
 def align_phonemes_with_ctc_frames(
     audio: np.ndarray,
