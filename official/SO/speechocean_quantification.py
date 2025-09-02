@@ -249,10 +249,14 @@ def create_csv_data(
 
 if __name__ == "__main__":
     SAMPLERATE = 16000
+    # PREP_PATH = "facebook/wav2vec2-xlsr-53-espeak-cv-ft"
+    # DS_CACHE_PATH = "/vol/tensusers6/aparikh/PhD/CTC-based-GOP/cache_dir"
+    # DATA_PATH = "/vol/tensusers6/aparikh/PhD/data/spo762/so_everything_cmu_ipa"
+    # CSV_OUTPUT = "/vol/tensusers6/aparikh/PhD/CTC-based-GOP/quantification/speechocean_evaluation/phoneme_alignment_CTC_SEGMENT_mean.csv"
     PREP_PATH = "facebook/wav2vec2-xlsr-53-espeak-cv-ft"
-    DS_CACHE_PATH = "/vol/tensusers6/aparikh/PhD/CTC-based-GOP/cache_dir"
-    DATA_PATH = "/vol/tensusers6/aparikh/PhD/data/spo762/so_everything_cmu_ipa"
-    CSV_OUTPUT = "/vol/tensusers6/aparikh/PhD/CTC-based-GOP/quantification/speechocean_evaluation/phoneme_alignment_CTC_SEGMENT_mean.csv"
+    DS_CACHE_PATH = "../cache_dir"
+    DATA_PATH = "../../../../../DataSets/speechocean762/speechocean762/"
+    CSV_OUTPUT = "../output/phoneme_alignment_CTC_SEGMENT_mean.csv"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     start_time = print_system_info()
     logger.info("Using device: %s", device)
