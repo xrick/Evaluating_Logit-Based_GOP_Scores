@@ -5,3 +5,5 @@ pandas
 torch
 tqdm
 transformers
+phonemizer
+protobuf
