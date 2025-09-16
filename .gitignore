@@ -1,0 +1,15 @@
+.DS_Store
+official/.DS_Store
+official/cache_dir/.locks/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/04366b6c8d24099ef313cf02f0e58d26f5dddfda16edbfc8eb2c713d94a9f551.lock
+official/cache_dir/.locks/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/c8fc04b8bd95c7a3361e606579a36f335a2b0c57.lock
+official/cache_dir/.locks/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/cd23ca5a57a252ee44abfea3b06d28020285015b83b8bb0e59293193ef8c2bd4.lock
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/.no_exist/2c733782da5604684829819a5eb744c193fe9398/model.safetensors
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/.no_exist/2c733782da5604684829819a5eb744c193fe9398/model.safetensors.index.json
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/blobs/04366b6c8d24099ef313cf02f0e58d26f5dddfda16edbfc8eb2c713d94a9f551
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/blobs/c8fc04b8bd95c7a3361e606579a36f335a2b0c57
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/blobs/cd23ca5a57a252ee44abfea3b06d28020285015b83b8bb0e59293193ef8c2bd4
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/refs/refs/pr/7
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/snapshots/2c733782da5604684829819a5eb744c193fe9398/config.json
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/snapshots/2c733782da5604684829819a5eb744c193fe9398/pytorch_model.bin
+official/cache_dir/models--facebook--wav2vec2-xlsr-53-espeak-cv-ft/snapshots/3e836924cfd3b858a0bbdbc1f7ef412105d00446/model.safetensors
+official/.DS_Store
