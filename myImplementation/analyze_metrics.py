@@ -129,4 +129,4 @@ def analyze_gop_metrics(csv_filepath: str):
 # 假設您會從命令列執行，您可以保留以下部分
 if __name__ == '__main__':
     # 替換成您的檔案路徑
-    analyze_gop_metrics('.output/myimpl_so_metrics_old.csv')
+    analyze_gop_metrics('.output/myimpl_speechocean_metrics_withHFSO.csv')
