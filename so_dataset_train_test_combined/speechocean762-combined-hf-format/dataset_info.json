@@ -1,0 +1,52 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "audio": {
+      "array": {
+        "feature": {
+          "dtype": "float32",
+          "_type": "Value"
+        },
+        "_type": "List"
+      },
+      "sampling_rate": {
+        "dtype": "int64",
+        "_type": "Value"
+      }
+    },
+    "speaker": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "words": {
+      "feature": {
+        "phones": {
+          "feature": {
+            "dtype": "string",
+            "_type": "Value"
+          },
+          "_type": "List"
+        },
+        "phones-accuracy": {
+          "feature": {
+            "dtype": "float64",
+            "_type": "Value"
+          },
+          "_type": "List"
+        }
+      },
+      "_type": "List"
+    },
+    "utterance_id": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}
