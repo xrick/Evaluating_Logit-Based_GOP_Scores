@@ -52,9 +52,40 @@ def debug_gop_calculation():
             else:
                 print(f"  {phone} -> 不在詞彙表中 ❌")
 
-    # 測試音訊處理
-    audio_array = np.array(example['audio']['array'])
-    sampling_rate = example['audio']['sampling_rate']
+    # 測試音訊處理 - 支援 AudioDecoder 和傳統格式
+    audio_data = example['audio']
+
+    try:
+        if hasattr(audio_data, 'get_all_samples'):
+            # New torchcodec AudioDecoder format
+            audio_samples = audio_data.get_all_samples()
+            audio_array = audio_samples.data.numpy()
+            sampling_rate = audio_samples.sample_rate
+
+            # Handle multi-channel audio (convert to mono)
+            if audio_array.ndim > 1:
+                if audio_array.shape[0] == 1:  # (1, samples)
+                    audio_array = audio_array.squeeze(0)
+                else:  # (samples, channels) or other format
+                    audio_array = audio_array.mean(axis=-1)
+
+        elif hasattr(audio_data, 'array') and hasattr(audio_data, 'sampling_rate'):
+            # Legacy HuggingFace audio format
+            audio_array = np.array(audio_data.array)
+            sampling_rate = audio_data.sampling_rate
+
+        elif isinstance(audio_data, dict) and "array" in audio_data:
+            # Very old format
+            audio_array = np.array(audio_data["array"])
+            sampling_rate = audio_data["sampling_rate"]
+
+        else:
+            print(f"Unsupported audio format: {type(audio_data)}")
+            return
+
+    except Exception as e:
+        print(f"Error processing audio: {e}")
+        return
     print(f"\n音訊資訊:")
     print(f"採樣率: {sampling_rate}")
     print(f"音訊長度: {len(audio_array)} samples ({len(audio_array)/sampling_rate:.2f} seconds)")
