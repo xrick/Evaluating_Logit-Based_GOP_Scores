@@ -45,3 +45,4 @@ so_dataset_train_test_combined/speechocean762-combined-hf-format/cache-e1d442048
 so_dataset_train_test_combined/speechocean762-combined-hf-format/data-00000-of-00003.arrow
 so_dataset_train_test_combined/speechocean762-combined-hf-format/data-00001-of-00003.arrow
 so_dataset_train_test_combined/speechocean762-combined-hf-format/data-00002-of-00003.arrow
+.DS_Store
